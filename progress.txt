@@ -1,0 +1,120 @@
+CREATE VLAN
+ML1
+vlan 20
+int vlan 20
+ip address 192.168.20.253 255.255.255.0
+vlan 25
+int vlan 25
+ip address 192.168.25.253 255.255.255.0
+vlan 30
+int vlan 30
+ip address 192.168.30.253 255.255.255.0
+vlan 35
+int vlan 35
+ip address 192.168.35.253 255.255.255.0
+vlan 40
+int vlan 40
+ip address 192.168.40.253 255.255.255.0
+vlan 45
+int vlan 45
+ip address 192.168.45.253 255.255.255.0
+vlan 50
+int vlan 50
+ip address 192.168.50.253 255.255.255.0
+vlan 55
+int vlan 55
+ip address 192.168.55.253 255.255.255.0
+vlan 60
+int vlan 60
+ip address 192.168.60.253 255.255.255.0
+
+
+ML2
+vlan 20
+int vlan 20
+ip address 192.168.20.254 255.255.255.0
+vlan 25
+int vlan 25
+ip address 192.168.25.254 255.255.255.0
+vlan 30
+int vlan 30
+ip address 192.168.30.254 255.255.255.0
+vlan 35
+int vlan 35
+ip address 192.168.35.254 255.255.255.0
+vlan 40
+int vlan 40
+ip address 192.168.40.254 255.255.255.0
+vlan 45
+int vlan 45
+ip address 192.168.45.254 255.255.255.0
+vlan 50
+int vlan 50
+ip address 192.168.50.254 255.255.255.0
+vlan 55
+int vlan 55
+ip address 192.168.55.254 255.255.255.0
+vlan 60
+int vlan 60
+ip address 192.168.60.254 255.255.255.0
+
+CREATE HSRP
+ML2
+int vlan 60
+standby 60 ip 192.168.60.200
+standby 60 priority 200
+standby 60 preempt
+int vlan 55
+standby 55 ip 192.168.55.200
+standby 55 preempt
+int vlan 50
+standby 50 ip 192.168.50.200
+standby 50 preempt
+int vlan 45
+standby 45 ip 192.168.45.200
+standby 45 preempt
+int vlan 40
+standby 40 ip 192.168.40.200
+standby 40 preempt 
+int vlan 35
+standby 35 ip 192.168.35.200
+standby 35 preempt 
+int vlan 30
+standby 30 ip 192.168.30.200
+standby 30 preempt 
+int vlan 25
+standby 25 ip 192.168.25.200
+standby 25 preempt
+int vlan 20
+standby 20 ip 192.168.20.200
+standby 20 preempt   
+
+ML1
+int vlan 20
+standby 20 ip 192.168.20.200
+standby 20 priority 200
+standby 20 preempt
+int vlan 25
+standby 25 ip 192.168.25.200
+standby 25 preempt 
+int vlan 30
+standby 30 ip 192.168.30.200
+standby 30 preempt 
+int vlan 35
+standby 35 ip 192.168.35.200
+standby 35 preempt 
+int vlan 40
+standby 40 ip 192.168.40.200
+standby 40 preempt 
+int vlan 45
+standby 45 ip 192.168.45.200
+standby 45 preempt
+int vlan 50
+standby 50 ip 192.168.50.200
+standby 50 preempt
+int vlan 55
+standby 55 ip 192.168.55.200
+standby 55 preempt
+int vlan 60
+standby 60 ip 192.168.60.200
+standby 60 preempt
